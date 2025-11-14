@@ -4,8 +4,19 @@ import React from "react";
 import { GiLaurels } from "react-icons/gi";
 
 export const metadata = {
-  title: "Політика конфіденційності - Ersag / Ерсаг",
-  description: "Політика конфіденційності та захисту персональних даних",
+  title: "Політика конфіденційності",
+  description:
+    "Політика конфіденційності та захисту персональних даних Ersag / Ерсаг. Дізнайтеся, як ми збираємо, використовуємо та захищаємо вашу персональну інформацію.",
+  openGraph: {
+    title: "Політика конфіденційності - Ersag / Ерсаг",
+    description:
+      "Політика конфіденційності та захисту персональних даних Ersag / Ерсаг.",
+    url: "/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const PrivacyPage = () => {

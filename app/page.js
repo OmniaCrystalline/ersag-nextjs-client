@@ -21,8 +21,68 @@ export default async function Home() {
     title: e.title,
   }));
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ersag.com.ua';
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'good.answer@gmail.com';
+
+  // Структуровані дані для SEO
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ersag / Ерсаг",
+    "url": siteUrl,
+    "logo": `${siteUrl}/icon.svg`,
+    "description": "Турецька екологічна побутова хімія високої якості",
+    "email": contactEmail,
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "UA"
+    },
+    "sameAs": []
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ersag / Ерсаг",
+    "url": siteUrl,
+    "description": "Купити товари Ерсаг Ersag Україна. Турецька екологічна побутова хімія високої якості.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteUrl}/catalog?search={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Головна",
+        "item": siteUrl
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Hero />
       <Features />
       <Categories />

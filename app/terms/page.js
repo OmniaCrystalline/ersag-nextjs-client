@@ -4,8 +4,18 @@ import React from "react";
 import { GiLaurels } from "react-icons/gi";
 
 export const metadata = {
-  title: "Умови використання - Ersag / Ерсаг",
-  description: "Умови використання веб-сайту Ersag",
+  title: "Умови використання",
+  description:
+    "Умови використання веб-сайту Ersag / Ерсаг. Правила та умови користування нашим інтернет-магазином екологічної побутової хімії.",
+  openGraph: {
+    title: "Умови використання - Ersag / Ерсаг",
+    description: "Умови використання веб-сайту Ersag / Ерсаг.",
+    url: "/terms",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const TermsPage = () => {

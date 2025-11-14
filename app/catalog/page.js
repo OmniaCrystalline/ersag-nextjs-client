@@ -9,8 +9,15 @@ import ProductFilters from "@/components/catalog/ProductFilters";
 import dbConnect from "@/lib/mongo/connect";
 
 export const metadata = {
-  title: "Каталог товарів - Ersag / Ерсаг",
-  description: "Повний каталог екологічної побутової хімії Ersag",
+  title: "Каталог товарів",
+  description:
+    "Повний каталог екологічної побутової хімії Ersag. Широкий вибір турецьких екологічних засобів для дому. Фільтри по категоріям, ціні та назві.",
+  openGraph: {
+    title: "Каталог товарів - Ersag / Ерсаг",
+    description:
+      "Повний каталог екологічної побутової хімії Ersag. Широкий вибір турецьких екологічних засобів для дому.",
+    url: "/catalog",
+  },
 };
 
 const CatalogPage = async ({ searchParams }) => {
