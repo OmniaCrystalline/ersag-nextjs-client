@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .auth-form a {
+    @apply p-2 grid text-center
+  }
+
+  .btn-active-auth {
+    @apply font-medium border-b-2 border-b-accent1
+  }
+
+  .auth-form span {
+    @apply text-accent1 text-xs
+  }
+
+  .auth-form {
+    @apply grid gap-1 rounded text-center p-3
+  }
+
+  .auth-form input {
+    @apply border border-spacing-1 text-accent1 hover:outline-accent1 focus:outline-accent1 w-full p-2 rounded
+  }
+
+  .auth-form button {
+    @apply p-2 bg-accent1 text-bg hover:bg-bg hover:text-accent1 focus:text-accent1 focus:bg-bg w-full rounded mt-3
+  }
+}
+
+/*modal*/
+
+.dropdown-backdrop {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 990;
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 2ms;
+}
+
+
+.slide {
+  position: absolute;
+  height: auto;
+  width: 90%;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+@media screen and (min-width: 768px) {
+  .slide {
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .slide {
+    position: absolute;
+    height: 90%;
+    width: auto;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+}
+
+
+
+.next {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  padding: 20px;
+}
+
+.previous {
+  position: fixed;
+  top: 50%;
+  padding: 20px;
+}
+
+/*nav*/
+
+@media screen and (max-width: 767px) {
+  .nav-sm{
+    display: block;
+  }
+  
+}
