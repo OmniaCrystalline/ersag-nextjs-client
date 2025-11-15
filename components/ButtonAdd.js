@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import React from "react";
-import { SlBasket } from "react-icons/sl";
+import { FaShoppingBasket } from "react-icons/fa";
 import useStore from "@/lib/zustand/hook";
 import useAuthStore from "@/lib/zustand/storage";
 
@@ -18,7 +18,7 @@ const ButtonAdd = ({ elem }) => {
     <>
       {handler && (
         <button className='text-accent1' onClick={handleClick} type='button'>
-          <SlBasket />
+          <FaShoppingBasket />
         </button>
       )}
     </>
